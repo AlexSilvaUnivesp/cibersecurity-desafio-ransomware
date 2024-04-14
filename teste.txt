@@ -1,1 +1,2 @@
-alo brasil
+Este é um arquivo em texto claro sem criptografia.
+
